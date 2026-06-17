@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -10,14 +11,18 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 50px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: aquamarine;
+}
+
+h1{
+    font-size: 2.5rem;
 }
 
 .btn{
     display: grid;
-    grid-template-columns: 80px 80px 80px;
-    grid-template-rows: 80px 80px 80px;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
     column-gap: 10px;
     row-gap: 10px;
 }
@@ -27,10 +32,11 @@ body{
     border-radius: 10px;
     background-color: white;
     font-size: 1.5rem;
+    transition: transform 0.2s ease;
 }
 
 .btn button:hover{
-    
+    scale: 1.1;
 }
 
 .players{
@@ -38,6 +44,11 @@ body{
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+    font-size: 20px;
+}
+
+.players i{
+    color: blue;
 }
 
 .start{
@@ -45,12 +56,13 @@ body{
     align-items: center;
     justify-content: center;
     width: auto;
-    padding: 20px;
+    padding: 25px;
     height: 40px;
     border-radius: 999px;
     border: none;
     background-color: blueviolet;
     color: white;
+    font-size: 15px;
 }
 
 .reset{
@@ -63,8 +75,22 @@ body{
     border: none;
     background-color: blueviolet;
     color: white;
+    
 }
 
 .none{
     display: none;
+}
+
+/* resposivness*/
+
+@media (max-width: 480px) {
+    .players{
+        font-size: 14px;
+        justify-content: space-evenly;
+    }
+
+    .start,.reset{
+        scale: 1.2;
+    }
 }
